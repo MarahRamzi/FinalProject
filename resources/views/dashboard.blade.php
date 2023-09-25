@@ -64,7 +64,7 @@
       </div>
 
       <div class="mx-5">
-        <p class="text-dark">Authenticated User : </p>  {{-- {{ Auth::user()->name }}  --}}
+        <p class="text-dark"></p>  {{-- Authenticated User : {{ Auth::user()->name }}  --}}
     </div>
     </form>
 
@@ -224,36 +224,11 @@
             </ul>
           </li>
 
+    {{-- @can('viewAny', ['App\Models\Employee' ,Auth::user()]) --}}
+
+          @if(Auth::guard('web')->check())
 
           <li class="nav-header  "> User Mangment</li>
-{{--
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-                <i class="fas fa-user"></i>
-              <p>
-                Administrator
-                <i class="right fas fa-angle-left"></i>
-
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ route('users.index') }}" class="nav-link">
-                  <i class="fas fa-list-ul"></i>
-                  <p>Index</p>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="{{ route('users.create') }}" class="nav-link">
-                  <i class="fas fa-plus"></i>
-                  <p>Create</p>
-                </a>
-              </li>
-
-            </ul>
-          </li> --}}
-
 
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -288,6 +263,7 @@
 
             </ul>
           </li>
+          @endif
 
 
 
@@ -295,7 +271,7 @@
 
           <li class="nav-header"> Content Mangment</li>
 
-
+        @if(Auth::guard('web')->check())
           <li class="nav-item">
             <a href="#" class="nav-link">
                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
@@ -322,6 +298,37 @@
 
             </ul>
           </li>
+          @endif
+
+          @if(Auth::guard('employee')->check())
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              <p>
+                Leave Request
+                <i class="right fas fa-angle-left"></i>
+
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('employees.leaveRequests.create'  , Auth::guard('employee')->id()) }}" class="nav-link">
+                  <i class="fas fa-plus"></i>
+                  <p>Add Leave Request</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{ route('employees.leaveRequests.index' , Auth::guard('employee')->id()) }}" class="nav-link">
+                  <i class="fas fa-list-ul"></i>
+                  <p>Show Leave Request</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+          @endif
 
 
 

@@ -6,7 +6,7 @@
 
 @endpush
 
-@section('mainTitle', " All Leave Request")
+@section('mainTitle', 'All Leave Request')
 
 @section('subTitle','All Leave Request')
 
@@ -72,7 +72,7 @@
                     {{-- {{ $leaveRequest->Leavestatus->status }} --}}
 
 
-                  </td> --}}
+                  </td> 
                   {{-- <td colspan="1">
                      <div class="d-flex justify-content-around">
                           <a href="{{ route('employees.leaveRequests.edit' ,[$employee->id , $leaveRequest->id ]) }}"><i class="fa-regular fa-pen-to-square text-dark"></i></a>

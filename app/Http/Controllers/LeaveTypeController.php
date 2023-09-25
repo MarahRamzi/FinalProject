@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class LeaveTypeController extends Controller
 {
+
+    public function __construct(){
+        $this->authorizeResource(LeaveType::class);
+    }
     /**
      * Display a listing of the resource.
      */

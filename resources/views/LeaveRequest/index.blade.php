@@ -42,6 +42,7 @@
                   <td colspan="1">{{ $leaveRequest->duration_days }}</td>
                   <td colspan="1">{{$leaveRequest->status}}</td>
                   <td colspan="1">
+                    @if($leaveRequest->status != 'Accept')
                      <div class="d-flex justify-content-around">
                           <a href="{{ route('employees.leaveRequests.edit' ,[$employee->id , $leaveRequest->id ]) }}"><i class="fa-regular fa-pen-to-square text-dark"></i></a>
                           <form action="{{ route('employees.leaveRequests.destroy' , [$employee->id ,  $leaveRequest->id ]) }}" method="post">
@@ -50,6 +51,7 @@
                               <button type="submit" class="btn btn-outline-dark btn-sm"><i class="fa-solid fa-trash"></i></button>
                           </form>
                      </div>
+                     @endif
                   </td>
 
               </tr>

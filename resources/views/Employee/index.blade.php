@@ -29,7 +29,7 @@
         <th scope="col">Name</th>
         <th scope="col">Email</th>
         <th scope="col">Action</th>
-        <th scope="col">Leave Request</th>
+        {{-- <th scope="col">Leave Request</th> --}}
 
 
       </tr>
@@ -50,12 +50,12 @@
                         </form>
                    </div>
                 </td>
-                <td colspan="1">
+                {{-- <td colspan="1">
                     <a href="{{ route('employees.leaveRequests.create' , $employee->id) }}" class="text-dark link-underline-dark">Add Leave Request</a>
                     <hr>
                     <a href="{{ route('employees.leaveRequests.index' , $employee->id) }}" class="text-dark link-underline-dark">View Leave Request</a>
 
-                </td>
+                </td> --}}
             </tr>
         @empty
             <p>Ther is no employee</p>

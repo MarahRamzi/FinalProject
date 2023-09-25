@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('employees', function (Blueprint $table) {
-            // $table->string('password')->after('career')->nullable();
-            $table->enum('role' , ['Admin' , 'Employee'])->after('password');
+            $table->string('password')->after('email')->nullable();
+            // $table->enum('role' , ['Admin' , 'Employee'])->after('password');
         });
     }
 

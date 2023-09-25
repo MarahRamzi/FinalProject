@@ -34,7 +34,7 @@ return [
     | mechanisms used by this application to persist your user's data.
     |
     | Supported: "session"
-    | 
+    |
     */
 
     'guards' => [
@@ -107,7 +107,7 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
-
+ 
         'employees' => [
             'provider' => 'employees',
             'table' => 'password_reset_tokens',
